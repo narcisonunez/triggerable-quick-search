@@ -1,0 +1,270 @@
+/* LIGHT THEME */
+
+.theme-light .result-info-image{
+    display: inline;
+    margin: 0;
+}
+
+
+.theme-light .result-info-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    margin-right: 14px;
+}
+
+.theme-light .result-info {
+    display: inline-block;
+}
+
+.theme-light .result-info .result-info-title {
+    font-weight: bold;
+}
+
+.theme-light .result-info .result-info-subtitle {
+    color: #b9b9b9;
+}
+
+.theme-light .quick-search-result {
+    cursor: pointer;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.theme-light .quick-search-result:hover {
+    background: rgb(240, 240, 240);
+}
+
+.theme-light #triggersContainer {
+    padding-top: 4px;
+}
+
+.theme-light #triggersContainer span{
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.theme-light #resultListContainer {
+    list-style: none;
+    padding: 0;
+}
+
+.theme-light .trigger-hint {
+    cursor: pointer;
+}
+
+/* LIGHT THEME END */
+
+/* RED THEME */
+
+.theme-red .modal-content{
+    background-color: #a23c3cdb;
+    color: white;
+}
+
+.theme-red .result-info-image{
+    display: inline;
+    margin: 0;
+}
+
+
+.theme-red .result-info-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    margin-right: 14px;
+}
+
+.theme-red .result-info {
+    display: inline-block;
+}
+
+.theme-red .result-info .result-info-title {
+    font-weight: bold;
+}
+
+.theme-red .result-info .result-info-subtitle {
+    color: #b9b9b9;
+}
+
+.theme-red .quick-search-result {
+    cursor: pointer;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.theme-red .quick-search-result:hover {
+    background: #a23c3c;
+}
+
+.theme-red #triggersContainer {
+    padding-top: 4px;
+}
+
+.theme-red #triggersContainer span{
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.theme-red #resultListContainer {
+    list-style: none;
+    padding: 0;
+}
+
+.theme-red .trigger-hint {
+    cursor: pointer;
+}
+
+.theme-red #showAllRecords {
+    color: white;
+}
+
+.theme-red .close span {
+    color: white;
+}
+
+/* RED THEME END */
+
+/* VIOLET THEME */
+
+.theme-violet .modal-content{
+    background-color: #443e98e3;
+    color: white;
+}
+
+.theme-violet .result-info-image{
+    display: inline;
+    margin: 0;
+}
+
+
+.theme-violet .result-info-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    margin-right: 14px;
+}
+
+.theme-violet .result-info {
+    display: inline-block;
+}
+
+.theme-violet .result-info .result-info-title {
+    font-weight: bold;
+}
+
+.theme-violet .result-info .result-info-subtitle {
+    color: #b9b9b9;
+}
+
+.theme-violet .quick-search-result {
+    cursor: pointer;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.theme-violet .quick-search-result:hover {
+    background: #443e98
+}
+
+.theme-violet #triggersContainer {
+    padding-top: 4px;
+}
+
+.theme-violet #triggersContainer span{
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.theme-violet #resultListContainer {
+    list-style: none;
+    padding: 0;
+}
+
+.theme-violet .trigger-hint {
+    cursor: pointer;
+}
+
+.theme-violet #showAllRecords {
+    color: white;
+}
+
+.theme-violet .close span {
+    color: white;
+}
+
+/* VIOLET THEME END */
+
+/* DARK THEME */
+
+.theme-dark .modal-content{
+    background-color: #333333cc;
+    color: white;
+}
+
+.theme-dark .result-info-image{
+    display: inline;
+    margin: 0;
+}
+
+
+.theme-dark .result-info-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    margin-right: 14px;
+}
+
+.theme-dark .result-info {
+    display: inline-block;
+}
+
+.theme-dark .result-info .result-info-title {
+    font-weight: bold;
+}
+
+.theme-dark .result-info .result-info-subtitle {
+    color: #b9b9b9;
+}
+
+.theme-dark .quick-search-result {
+    cursor: pointer;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.theme-dark .quick-search-result:hover {
+    background: #333
+}
+
+.theme-dark #triggersContainer {
+    padding-top: 4px;
+}
+
+.theme-dark #triggersContainer span{
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.theme-dark #resultListContainer {
+    list-style: none;
+    padding: 0;
+}
+
+.theme-dark .trigger-hint {
+    cursor: pointer;
+}
+
+.theme-dark #showAllRecords {
+    color: white;
+}
+
+.theme-dark .close span {
+    color: white;
+}
+
+/* DARK THEME END */

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Triggerable Quick Search Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../triggerable-quick-search.css">
+  </head>
+  <body>
+
+
+    <div class="theme-dark">
+        <div class="modal fade" id="quick-search-modal" tabindex="-1" role="dialog" aria-labelledby="quick-search-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quick-search-modal-title">Quick Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <form action="">
+                            <input type="text" class="form-control" id="quickSearchInput" placeholder="Quick Search...">
+                        </form>
+                        <div id="triggersContainer"></div>  
+                        <div id="resultContainer">
+                            <hr>
+                                <a href="#" id="showAllRecords" style="display: none;">Show all</a>
+                            <hr>
+                            <ul id="resultListContainer"></ul>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../triggerable-quick-search.js"></script>
+        <script type="text/javascript">
+
+        triggerableQuickSearch.init('/');
+
+        triggerableQuickSearch.add({
+          "name": "project",
+          "codeKey": "isbn",
+          "titleKey": "name",
+          "urls": {
+              "all": "https://demo2777527.mockable.io/books",
+              "single": "https://demo2777527.mockable.io/books/{book}",
+              "redirect": "https://demo2777527.mockable.io/books/all"
+          },
+          "subtitle": {
+            "subtitleKey": "author"
+          },
+          "image": {
+              "imageKey": "poster"
+          }
+      });
+
+      triggerableQuickSearch.add({
+          "name": "task",
+          "codeKey": "isbn",
+          "titleKey": "name",
+          "urls": {
+              "all": "https://demo2777527.mockable.io/books",
+              "single": "https://demo2777527.mockable.io/books/{task}",
+              "redirect": "https://demo2777527.mockable.io/books/allTask"
+          },
+          "subtitle": {
+            "subtitleKey": "author"
+          }
+      });
+
+      triggerableQuickSearch.showTriggersOnModal();
+
+    </script>
+
+    <script>
+
+            $('#quick-search-modal').on('shown.bs.modal', function (event) {
+                $('#quickSearchInput').val(triggerableQuickSearch.triggerPrefix);
+                $('#quickSearchInput').trigger("focus"); 
+            
+            });
+    
+            document.onkeydown = function(e){
+                var evtobj = window.event? event : e;
+                if (evtobj.keyCode == 83 && evtobj.ctrlKey && evtobj.shiftKey) {
+                    $("#quick-search-modal").modal('toggle');
+                    
+                }
+            };
+        </script>
+  </body>
+</html>

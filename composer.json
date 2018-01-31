@@ -1,0 +1,14 @@
+{
+    "name": "geekroot/triggerable-quick-search",
+    "description": "Javascript library that allow you to register your own @trigger key words for quick search anywhere in your site.",
+    "keywords": ["triggerable", "javascript", "quick-search"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Narciso Nunez",
+        "email" : "narciso.arias21@gmail.com",
+        "homepage": "http://www.narcisonunez.com",
+        "role": "Owner"
+      }
+    ]
+}
