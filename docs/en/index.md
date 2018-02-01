@@ -153,7 +153,7 @@ triggerableQuickSearch.add({
 | **actionable** | Optional: if is set will show an Create button to redirect to the form.|
 | **actionable.url** | Where to redirect when the Create button is press.|
 
-![alt Result item list](/triggerable-quick-search/docs/imgs/result-item-view.PNG "Result item list")
+![alt Result item list](https://github.com/geekroot/triggerable-quick-search/blob/master/docs/imgs/result-item-view.PNG "Result item list")
 
 The required info about a new trigger is:
 
