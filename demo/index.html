@@ -11,7 +11,7 @@
   <body>
 
 
-    <div class="theme-red">
+    <div class="theme-dark">
         <div class="modal fade" id="quick-search-modal" tabindex="-1" role="dialog" aria-labelledby="quick-search-modal-label" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -55,15 +55,16 @@
         <script type="text/javascript">
 
         triggerableQuickSearch.init('/');
+        triggerableQuickSearch.baseUrl('https://demo2777527.mockable.io');
 
         triggerableQuickSearch.add({
           "name": "project",
           "codeKey": "isbn",
           "titleKey": "name",
           "urls": {
-              "all": "https://demo2777527.mockable.io/books",
-              "single": "https://demo2777527.mockable.io/books/{book}",
-              "redirect": "https://demo2777527.mockable.io/books/all"
+              "all": "/books",
+              "single": "/books/{book}",
+              "redirect": "/books/all"
           },
           "subtitle": {
             "subtitleKey": "author"
@@ -78,12 +79,12 @@
           "codeKey": "isbn",
           "titleKey": "name",
           "urls": {
-              "all": "https://demo2777527.mockable.io/books",
-              "single": "https://demo2777527.mockable.io/books/{task}",
-              "redirect": "https://demo2777527.mockable.io/books/allTask"
+              "all": "/books",
+              "single": "/books/{task}",
+              "redirect": "/books/allTask"
           },
           "actionable": {
-            "url": "https://demo2777527.mockable.io/books/create"
+            "url": "/books/create"
           },
           "subtitle": {
             "subtitleKey": "author"
