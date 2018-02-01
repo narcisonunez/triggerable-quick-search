@@ -34,9 +34,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                        <form action="">
-                            <input type="text" class="form-control" id="quickSearchInput" placeholder="Quick Search...">
-                        </form>
+                        <input type="text" class="form-control" id="quickSearchInput" placeholder="Quick Search...">
                         <div id="triggersContainer"></div>  
                         <div id="resultContainer">
                             <hr>
@@ -67,7 +65,7 @@
         triggerableQuickSearch.baseUrl('https://demo2777527.mockable.io');
 
         triggerableQuickSearch.add({
-          "name": "project",
+          "name": "book",
           "codeKey": "isbn",
           "titleKey": "name",
           "urls": {
@@ -80,42 +78,11 @@
           },
           "image": {
               "imageKey": "poster"
-          }
-      });
-
-      triggerableQuickSearch.add({
-          "name": "task",
-          "codeKey": "isbn",
-          "titleKey": "name",
-          "urls": {
-              "all": "/books",
-              "single": "/books/{task}",
-              "redirect": "/books/allTask"
           },
           "actionable": {
             "url": "/books/create"
-          },
-          "subtitle": {
-            "subtitleKey": "author"
           }
       });
     </script>
-
-    <script>
-            $('#quick-search-modal').on('hide.bs.modal', function (event) {
-                triggerableQuickSearch.resetViews();
-            });
-            $('#quick-search-modal').on('shown.bs.modal', function (event) {
-                $('#quickSearchInput').val(triggerableQuickSearch.triggerPrefix);
-                $('#quickSearchInput').trigger("focus"); 
-            
-            });
-            document.onkeydown = function(e){
-                var currentEvent = window.event? event : e;
-                if (currentEvent.keyCode == 83 && currentEvent.ctrlKey && currentEvent.shiftKey) {
-                    $("#quick-search-modal").modal('toggle');
-                }
-            };
-        </script>
   </body>
 </html>

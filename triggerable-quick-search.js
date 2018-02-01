@@ -9,10 +9,25 @@ var triggerableQuickSearch = {
   * @param triggerPrefix - The character to be used to invoke any trigger registered.
   * return undefined
   */
-  init: function(triggerPrefix) {
-      this.triggerPrefix = triggerPrefix || "@"; // @ Is the default triggerPrfix
+    init: function(triggerPrefix) {
+        this.triggerPrefix = triggerPrefix || "@"; // @ Is the default triggerPrfix
 
-      this.bind();
+        this.bind();
+
+        $('#quick-search-modal').on('hide.bs.modal', function (event) {
+            triggerableQuickSearch.resetViews();
+        });
+        $('#quick-search-modal').on('shown.bs.modal', function (event) {
+            $('#quickSearchInput').val(triggerableQuickSearch.triggerPrefix);
+            $('#quickSearchInput').trigger("focus"); 
+        
+        });
+        document.onkeydown = function(e){
+            var currentEvent = window.event? event : e;
+            if (currentEvent.keyCode == 83 && currentEvent.ctrlKey && currentEvent.shiftKey) {
+                $("#quick-search-modal").modal('toggle');
+            }
+        };
   },
 
   baseUrl: function(baseUrl){
