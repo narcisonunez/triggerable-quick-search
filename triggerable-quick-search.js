@@ -87,6 +87,7 @@ var triggerableQuickSearch = {
   */
   add: function(trigger){
       this.triggers.push(trigger);
+      this.showTriggersOnModal();
   },
 
   /* Add an array of new triggers to be registered in the invocationTriggers array

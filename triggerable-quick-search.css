@@ -7,6 +7,15 @@
     color: white;
 }
 
+#resultListContainer {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.modal-dialog {
+    max-width: 620px;
+    margin: 1.25rem auto;
+}
 
 /* LIGHT THEME */
 
@@ -80,6 +89,7 @@
 .theme-red .modal-content{
     background-color: #a23c3cdb;
     color: white;
+    max-width: 620px;
 }
 
 .theme-red .result-info-image{
@@ -151,6 +161,7 @@
 .theme-violet .modal-content{
     background-color: #443e98e3;
     color: white;
+    max-width: 620px;
 }
 
 .theme-violet .result-info-image{
@@ -222,6 +233,7 @@
 .theme-dark .modal-content{
     background-color: #333333cc;
     color: white;
+    max-width: 620px;
 }
 
 .theme-dark .result-info-image{
