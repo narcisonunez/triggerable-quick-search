@@ -153,7 +153,7 @@ triggerableQuickSearch.add({
 | **actionable** | Optional: if is set will show an Create button to redirect to the form.|
 | **actionable.url** | Where to redirect when the Create button is press.|
 
-![alt Result item list](../imgs/result-item-view.png "Result item list")
+![alt Result item list](../../imgs/result-item-view.png "Result item list")
 
 The required info about a new trigger is:
 
