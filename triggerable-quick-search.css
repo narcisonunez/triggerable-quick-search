@@ -1,3 +1,13 @@
+.create-record {
+    float: right;
+    color: white;
+}
+
+.create-record:hover {
+    color: white;
+}
+
+
 /* LIGHT THEME */
 
 .theme-light .result-info-image{
@@ -52,6 +62,15 @@
 
 .theme-light .trigger-hint {
     cursor: pointer;
+}
+
+.theme-light .create-record {
+    float: right;
+    color: #007bff;
+}
+
+.theme-light .create-record:hover {
+    color: #007bff;
 }
 
 /* LIGHT THEME END */

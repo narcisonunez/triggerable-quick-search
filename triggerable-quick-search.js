@@ -150,7 +150,12 @@ var triggerableQuickSearch = {
 
     var allRecordsLink = document.getElementById('showAllRecords');
     allRecordsLink.href = trigger.urls.redirect;
-    allRecordsLink.style.display = "block";
+    allRecordsLink.style.display = "inline";
+
+    var createRecord = document.getElementById('createRecord');
+    createRecord.href = trigger.actionable ? trigger.actionable.url : '';
+    createRecord.style.display = trigger.actionable ? 'inline' : 'none';
+    createRecord.innerHTML = 'Crear ' + trigger.name;
 
     me.reloadListeners(trigger);
   },
@@ -209,13 +214,13 @@ var triggerableQuickSearch = {
 
   resetViews: function(){
       document.getElementById("resultContainer").style.display = "none";
-      document.getElementById("showAllRecords").style.display = "";
+      document.getElementById("showAllRecords").style.display = "none";
       document.getElementById("showAllRecords").href = "#";
       document.getElementById("resultListContainer").innerHTML = "";
   },
 
   showViews: function(){
     document.getElementById("resultContainer").style.display = "block";
-    document.getElementById("showAllRecords").style.display = "block";
+    document.getElementById("showAllRecords").style.display = "inline";
 }
 };

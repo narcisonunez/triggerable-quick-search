@@ -11,7 +11,7 @@
   <body>
 
 
-    <div class="theme-dark">
+    <div class="theme-red">
         <div class="modal fade" id="quick-search-modal" tabindex="-1" role="dialog" aria-labelledby="quick-search-modal-label" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -30,6 +30,7 @@
                         <div id="resultContainer">
                             <hr>
                                 <a href="#" id="showAllRecords" style="display: none;">Show all</a>
+                                <a href="#" id="createRecord" class="create-record" style="display: none;"></a>
                             <hr>
                             <ul id="resultListContainer"></ul>
                         </div>
@@ -80,6 +81,9 @@
               "all": "https://demo2777527.mockable.io/books",
               "single": "https://demo2777527.mockable.io/books/{task}",
               "redirect": "https://demo2777527.mockable.io/books/allTask"
+          },
+          "actionable": {
+            "url": "https://demo2777527.mockable.io/books/create"
           },
           "subtitle": {
             "subtitleKey": "author"
