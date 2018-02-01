@@ -160,7 +160,7 @@ var triggerableQuickSearch = {
     var createRecord = document.getElementById('createRecord');
     createRecord.href = trigger.actionable ? this.baseUrl + trigger.actionable.url : '';
     createRecord.style.display = trigger.actionable ? 'inline' : 'none';
-    createRecord.innerHTML = 'Crear ' + trigger.name;
+    createRecord.innerHTML = 'Create ' + trigger.name;
 
     me.reloadListeners(trigger);
   },
