@@ -1,6 +1,8 @@
 var triggerableQuickSearch = {
+  "theme": "default", // UI theme to be used.
   "triggerPrefix": "", // The character to be used to invoke any trigger registered.
   "triggers": [], // Array containing all the triggers registered.
+  "baseUrl": "",
 
   /* Object confirutation entry point
   * @param container - Input Element where the user will be typing.
@@ -11,6 +13,10 @@ var triggerableQuickSearch = {
       this.triggerPrefix = triggerPrefix || "@"; // @ Is the default triggerPrfix
 
       this.bind();
+  },
+
+  baseUrl: function(baseUrl){
+    this.baseUrl = baseUrl;
   },
 
   /* Bind will be binding the input field provided as container to the event "keyup"
@@ -124,7 +130,7 @@ var triggerableQuickSearch = {
         }
       };
 
-      xhttp.open("GET", url, true);
+      xhttp.open("GET", this.baseUrl + url, true);
       xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
       xhttp.send();
@@ -149,8 +155,13 @@ var triggerableQuickSearch = {
     resultListElement.style.display = "block";
 
     var allRecordsLink = document.getElementById('showAllRecords');
-    allRecordsLink.href = trigger.urls.redirect;
-    allRecordsLink.style.display = "block";
+    allRecordsLink.href = this.baseUrl + trigger.urls.redirect;
+    allRecordsLink.style.display = "inline";
+
+    var createRecord = document.getElementById('createRecord');
+    createRecord.href = trigger.actionable ? this.baseUrl + trigger.actionable.url : '';
+    createRecord.style.display = trigger.actionable ? 'inline' : 'none';
+    createRecord.innerHTML = 'Create ' + trigger.name;
 
     me.reloadListeners(trigger);
   },
@@ -203,19 +214,19 @@ var triggerableQuickSearch = {
       var title = clickedElement.dataset.title;
       var code = clickedElement.dataset.code;
 
-      var url = trigger.urls.single.replace("{"+ trigger.name +"}", code);
+      var url = this.baseUrl + trigger.urls.single.replace("{"+ trigger.name +"}", code);
       window.location.href = url;
   },
 
   resetViews: function(){
       document.getElementById("resultContainer").style.display = "none";
-      document.getElementById("showAllRecords").style.display = "";
+      document.getElementById("showAllRecords").style.display = "none";
       document.getElementById("showAllRecords").href = "#";
       document.getElementById("resultListContainer").innerHTML = "";
   },
 
   showViews: function(){
     document.getElementById("resultContainer").style.display = "block";
-    document.getElementById("showAllRecords").style.display = "block";
+    document.getElementById("showAllRecords").style.display = "inline";
 }
 };

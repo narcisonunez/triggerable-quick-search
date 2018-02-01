@@ -21,8 +21,8 @@
         </div>
     </div> -->
 
+    <div class="theme-dark">
 
-    <div class="theme-light">
         <div class="modal fade" id="quick-search-modal" tabindex="-1" role="dialog" aria-labelledby="quick-search-modal-label" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -41,6 +41,7 @@
                         <div id="resultContainer">
                             <hr>
                                 <a href="#" id="showAllRecords" style="display: none;">Show all</a>
+                                <a href="#" id="createRecord" class="create-record" style="display: none;"></a>
                             <hr>
                             <ul id="resultListContainer"></ul>
                         </div>
@@ -54,23 +55,25 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
             crossorigin="anonymous"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="../triggerable-quick-search.js"></script>
-        <script type="text/javascript">
+    <script type="text/javascript">
 
         triggerableQuickSearch.init('/');
+        triggerableQuickSearch.baseUrl('https://demo2777527.mockable.io');
 
         triggerableQuickSearch.add({
           "name": "project",
           "codeKey": "isbn",
           "titleKey": "name",
           "urls": {
-              "all": "https://demo2777527.mockable.io/books",
-              "single": "https://demo2777527.mockable.io/books/{project}",
-              "redirect": "https://demo2777527.mockable.io/books/all"
+              "all": "/books",
+              "single": "/books/{book}",
+              "redirect": "/books/all"
           },
           "subtitle": {
             "subtitleKey": "author"
@@ -85,30 +88,31 @@
           "codeKey": "isbn",
           "titleKey": "name",
           "urls": {
-              "all": "https://demo2777527.mockable.io/books",
-              "single": "https://demo2777527.mockable.io/books/{task}",
-              "redirect": "https://demo2777527.mockable.io/books/allTask"
+              "all": "/books",
+              "single": "/books/{task}",
+              "redirect": "/books/allTask"
+          },
+          "actionable": {
+            "url": "/books/create"
           },
           "subtitle": {
             "subtitleKey": "author"
           }
       });
-
-      
-
     </script>
 
     <script>
-
+            $('#quick-search-modal').on('hide.bs.modal', function (event) {
+                triggerableQuickSearch.resetViews();
+            });
             $('#quick-search-modal').on('shown.bs.modal', function (event) {
                 $('#quickSearchInput').val(triggerableQuickSearch.triggerPrefix);
                 $('#quickSearchInput').trigger("focus"); 
             
             });
-    
             document.onkeydown = function(e){
-                var evtobj = window.event? event : e;
-                if (evtobj.keyCode == 83 && evtobj.ctrlKey && evtobj.shiftKey) {
+                var currentEvent = window.event? event : e;
+                if (currentEvent.keyCode == 83 && currentEvent.ctrlKey && currentEvent.shiftKey) {
                     $("#quick-search-modal").modal('toggle');
                 }
             };
