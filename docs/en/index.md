@@ -1,6 +1,6 @@
 # How to use
 
-The way to trigger the quick search modal is by pressing **Ctrl + Alt + s**. This will popup a modal to work with.
+The way to trigger the quick search modal is by pressing **Ctrl + Shift + s**. This will popup a modal to work with.
 
 ## **Steps to setup**
 
@@ -170,7 +170,7 @@ triggerableQuickSearch.add({
 });
 ```
 
-All the others are option and will be showed just if is specified.
+All the others are optionals and will be showed just if is specified.
 
 We all finish. Congrats. Go ahead and make a great user experience right there.
 - [x] Register your triggers
